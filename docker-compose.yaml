@@ -1,0 +1,15 @@
+networks:
+  test:
+    driver: bridge
+
+services:
+  tst:
+    image: blcrb/symfony:alpine
+#    build: ./
+    container_name: tst
+    ports:
+      - "8310:8000"
+    volumes:
+      - .:/app
+    networks:
+      - test
